@@ -22,12 +22,4 @@ public class DatabaseConnector{
         return dataSource.getConnection();
     }
 
-    public static void main(String[] args) throws SQLException {
-        DatabaseConnector dataBaseConnection = new DatabaseConnector();
-        Connection connection = dataBaseConnection.getConnection();
-
-        System.out.println("Try to open tho " + !connection.isClosed());
-
-        connection.close();
-    }
 }

@@ -2,21 +2,25 @@ package entities;
 
 public class Book {
     private int id;
-    private String author;
     private String title;
     private int year;
-    private int rating;
-    private String note;
+    private String author;
+    private String notes;
+    private String  publisher;
+    private String category;
 
 
-    public Book(int id, String title,String author, int year, int rating, String note){
+
+    public Book(int id, String title, int year, String author, String notes, String publisher,String category){
         this.id = id;
         this.title = title;
-        this.author = author;
         this.year = year;
-        this.rating = rating;
-        this.note = note;
+        this.author = author;
+        this.notes = notes;
+        this.publisher = publisher;
+        this.category = category;
     }
+
 
     public int getId() {
         return id;}
@@ -48,24 +52,33 @@ public class Book {
         this.year = year;
     }
 
-    public int getRating() {
-        return rating;
+    public String getNotes() {
+        return notes;
     }
 
-    public void setRating(int rating) {
-        this.rating = rating;
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
 
-    public String getNote() {
-        return note;
+    public String getPublisher() {
+        return publisher;
     }
 
-    public void setNote(String note) {
-        this.note = note;
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
     }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     @Override
     public String toString() {
-        return id + " " + title + " " + author + " " + year + " " + rating + " " + note;
+        return id + " " + title + " " + year + " " + author + " " + notes + " " + publisher + " " + category ;
     }
 
 }

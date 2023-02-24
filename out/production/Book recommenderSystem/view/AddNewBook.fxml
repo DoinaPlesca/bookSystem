@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="350.0" prefWidth="400.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddNewBookController">
+<AnchorPane fx:id="anchorAddBook" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddNewBookController">
    <children>
       <Label layoutX="18.0" layoutY="66.0" prefHeight="28.0" prefWidth="87.0" text="Title">
          <font>
@@ -18,33 +18,35 @@
             <Font size="23.0" />
          </font>
       </Label>
-      <TextField fx:id="txfTitle" layoutX="110.0" layoutY="66.0" prefHeight="34.0" prefWidth="247.0" />
-      <TextField fx:id="txfAuthor" layoutX="110.0" layoutY="141.0" prefHeight="34.0" prefWidth="247.0" />
+      <TextField fx:id="txfTitle" layoutX="118.0" layoutY="66.0" prefHeight="34.0" prefWidth="247.0" />
+      <TextField fx:id="txfAuthor" layoutX="118.0" layoutY="141.0" prefHeight="34.0" prefWidth="247.0" />
       <Label layoutX="23.0" layoutY="213.0" prefHeight="34.0" prefWidth="87.0" text="Year">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
-      <TextField fx:id="txfYear" layoutX="111.0" layoutY="213.0" prefHeight="34.0" prefWidth="99.0" />
-      <Button fx:id="btnAddNewBook" layoutX="23.0" layoutY="281.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: grey;" text="Add...">
+      <TextField fx:id="txfYear" layoutX="119.0" layoutY="213.0" prefHeight="34.0" prefWidth="99.0" />
+      <Button fx:id="btnAddNewBook" layoutX="28.0" layoutY="344.0" mnemonicParsing="false" onAction="#addPressed" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: grey;" text="Add...">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btnClose" layoutX="291.0" layoutY="281.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: grey;" text="Cancel">
+      <Button fx:id="btnClose" layoutX="296.0" layoutY="344.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: grey;" text="Cancel">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btnChooseFile" layoutX="111.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: grey;" text="Choose the file">
+      <Button fx:id="btnChooseFile" layoutX="18.0" layoutY="14.0" mnemonicParsing="false" onAction="#chooseFilePressed" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: grey;" text="Choose the file">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
-      <Label layoutX="14.0" layoutY="10.0" prefHeight="34.0" prefWidth="87.0" text="Choose ">
+      <Label layoutX="23.0" layoutY="282.0" prefHeight="34.0" prefWidth="99.0" text="Category">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
+      <TextField fx:id="txfCategory" layoutX="119.0" layoutY="282.0" prefHeight="34.0" prefWidth="238.0" />
+      <TextField fx:id="txfFileLocation" layoutX="118.0" layoutY="10.0" prefHeight="34.0" prefWidth="247.0" />
    </children>
 </AnchorPane>
