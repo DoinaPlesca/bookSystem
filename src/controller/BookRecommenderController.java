@@ -63,7 +63,7 @@ public class BookRecommenderController implements Initializable {
         modelCategory = new ModelCategory();
         showBooksTable();
         try {
-            System.out.println(modelCategory.getAllCategories());
+            modelCategory.getAllCategories();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -84,19 +84,6 @@ public class BookRecommenderController implements Initializable {
     public void editBook(ActionEvent actionEvent) throws IOException {
         displayEditBookPopup();
     }
-
-    /*
-    public void searchBooks() throws SQLException {
-        if (tableViewBooks != null) {
-            List<Book> list = Search.filteringBooks(model.getAllBooks(),txtSearch.getText());
-            tableViewBooks.getItems().clear();
-            tableViewBooks.setItems(FXCollections.observableArrayList(list));
-        }
-    }
-
-     */
-
-
 
     public void deleteBook(ActionEvent actionEvent) {
       Book selectedBook = (Book) tableViewBooks.getSelectionModel().getSelectedItem();
