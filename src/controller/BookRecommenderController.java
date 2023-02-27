@@ -85,6 +85,10 @@ public class BookRecommenderController implements Initializable {
         displayEditBookPopup();
     }
 
+    public void onCreateCat(ActionEvent actionEvent) throws IOException {
+        displayCreateCat();
+    }
+
     public void deleteBook(ActionEvent actionEvent) {
       Book selectedBook = (Book) tableViewBooks.getSelectionModel().getSelectedItem();
         try {
@@ -150,6 +154,17 @@ public class BookRecommenderController implements Initializable {
         Scene scene = new Scene(root);
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Edit Book");
+        primaryStage.setScene(scene);
+        primaryStage.initModality(Modality.APPLICATION_MODAL);
+        primaryStage.show();
+    }
+    public void displayCreateCat() throws IOException {
+
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("view/CreateCat.fxml"));
+
+        Scene scene = new Scene(root);
+        Stage primaryStage = new Stage();
+        primaryStage.setTitle("Create cat");
         primaryStage.setScene(scene);
         primaryStage.initModality(Modality.APPLICATION_MODAL);
         primaryStage.show();
