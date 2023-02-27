@@ -9,12 +9,11 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("view/BookRecommender.fxml"));
         primaryStage.setTitle("Book Recommender");
-        // primaryStage.setFullScreen(true);
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        launch(args);
     }
 }
