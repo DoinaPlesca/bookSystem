@@ -30,4 +30,9 @@ public class Model {
         books.remove(book);
     }
 
+    public void search(String query) throws SQLException {
+        books.clear();
+        books.addAll(logicManager.searchBooks(query));
+    }
+
 }

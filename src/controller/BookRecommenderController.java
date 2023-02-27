@@ -2,6 +2,8 @@ package controller;
 
 import entities.Book;
 import entities.Category;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -68,6 +70,17 @@ public class BookRecommenderController implements Initializable {
             throw new RuntimeException(e);
         }
         getAllCategoriesTable();
+
+        txtSearch.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                try {
+                    model.search(newValue);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
 
     }
 
