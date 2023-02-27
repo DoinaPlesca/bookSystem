@@ -59,6 +59,14 @@ public class BookRecommenderController implements Initializable {
     private Model model;
     private ModelCategory modelCategory;
 
+    public ModelCategory getModelCategory() {
+        return modelCategory;
+    }
+
+    public void setModelCategory(ModelCategory modelCategory) {
+        this.modelCategory = modelCategory;
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         model = new Model();
@@ -174,6 +182,8 @@ public class BookRecommenderController implements Initializable {
 
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("view/EditBook.fxml"));
 
+
+
         Scene scene = new Scene(root);
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Edit Book");
@@ -183,14 +193,21 @@ public class BookRecommenderController implements Initializable {
     }
     public void displayCreateCat() throws IOException {
 
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("view/CreateCat.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/CreateCat.fxml"));
+
+        root = loader.load();
+
+        CreateCatController createCatController = loader.getController();
+        createCatController.setModel(modelCategory);
 
         Scene scene = new Scene(root);
         Stage primaryStage = new Stage();
-        primaryStage.setTitle("Create cat");
+        primaryStage.setTitle("Add Book");
         primaryStage.setScene(scene);
         primaryStage.initModality(Modality.APPLICATION_MODAL);
         primaryStage.show();
+
+        showBooksTable();
     }
     public void updateTables(MouseEvent mouseEvent) {
         if (listsUpdated) {
