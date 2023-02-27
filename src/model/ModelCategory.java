@@ -1,8 +1,6 @@
 package model;
 
 import bll.CategoryManager;
-import bll.LogicManager;
-import entities.Book;
 import entities.Category;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

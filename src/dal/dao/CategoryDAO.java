@@ -18,7 +18,7 @@ public class CategoryDAO {
     public List <Category> getAllCategories() throws SQLException {
         List<Category> Category;
 
-        String sql = "SELECT * FROM BooksT";
+        String sql = "SELECT * FROM Categories";
         preparedStatement = databaseConnector.getConnection().prepareStatement(sql);
         ResultSet resultSet = preparedStatement.executeQuery();
         Category = fillCategory(resultSet);

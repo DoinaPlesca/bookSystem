@@ -6,10 +6,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.ModelCategory;
 
 
 public class CreateCatController {
-
     @FXML
     private TextField txfCategory;
     @FXML
