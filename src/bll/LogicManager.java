@@ -5,6 +5,7 @@ import dal.dao.CategoryDAO;
 import entities.Book;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class LogicManager {
@@ -26,6 +27,18 @@ public class LogicManager {
 
     public void deleteBook(int id) throws SQLException {
         bookDAO.deleteBook(id);
+    }
+
+    public List<Book> searchBooks(String query) throws SQLException {
+        List<Book> books = bookDAO.getAllBooks();
+        List<Book> filtered = new ArrayList<>();
+
+        for(Book b : books) {
+            if((""+b.getAuthor()).toLowerCase().contains(query) || b.getTitle().toLowerCase().contains(query.toLowerCase())){
+                filtered.add(b);
+            }
+        }
+        return filtered;
     }
 
 }
