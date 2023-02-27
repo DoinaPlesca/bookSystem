@@ -112,6 +112,16 @@ public class BookRecommenderController implements Initializable {
         }
     }
 
+    public void onDeleteCat(ActionEvent actionEvent) {
+        Category selectedCat = (Category) tableViewCategory.getSelectionModel().getSelectedItem();
+        try {
+            modelCategory.deleteCategory(selectedCat);
+            showBooksTable();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
     public void showBooksTable()  {
         columnTitle.setCellValueFactory(new PropertyValueFactory<Book, String>("title"));

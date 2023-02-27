@@ -24,8 +24,8 @@ public class ModelCategory {
     }
 
 
-    public void deleteBook(Category category) throws SQLException {
-        categoryManager.deleteBook(category.getId());
+    public void deleteCategory(Category category) throws SQLException {
+        categoryManager.deleteCategory(category.getId());
         categories.remove(category);
     }
 }

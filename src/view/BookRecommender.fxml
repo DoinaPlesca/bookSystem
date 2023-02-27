@@ -36,7 +36,12 @@
          <columns>
             <TableColumn fx:id="columnCategory" prefWidth="119.99999984105428" text="Category" />
          </columns></TableView>
-      <Button fx:id="btnCreateCat" layoutX="14.0" layoutY="25.0" mnemonicParsing="false" onAction="#onCreateCat" prefHeight="32.0" prefWidth="122.0" text="Create Cat">
+      <Button fx:id="btnCreateCat" layoutX="14.0" layoutY="9.0" mnemonicParsing="false" onAction="#onCreateCat" prefHeight="32.0" prefWidth="158.0" text="Create Cat">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDeleteCat" layoutX="14.0" layoutY="52.0" mnemonicParsing="false" onAction="#onDeleteCat" prefHeight="32.0" prefWidth="122.0" text="Delete Cat">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
